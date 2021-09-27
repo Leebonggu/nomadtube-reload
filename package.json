@@ -1,0 +1,45 @@
+{
+  "name": "nomadtube",
+  "version": "1.0.0",
+  "description": "nomad code youtebe clone",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node src/init.js",
+    "dev:assets": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leebonggu/nomadtube-reload.git"
+  },
+  "author": "Bongs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leebonggu/nomadtube-reload/issues"
+  },
+  "homepage": "https://github.com/Leebonggu/nomadtube-reload#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "nodemon": "^2.0.12",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
