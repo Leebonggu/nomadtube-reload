@@ -1,5 +1,4 @@
 import User from "../models/User";
-import Video from '../models/Video';
 import bcrypt from 'bcrypt';
 import fetch from 'node-fetch';
 
@@ -171,7 +170,13 @@ export const remove = (req, res) =>  res.send('/remove');
 
 export const see = async (req, res) => {
   const { id } = req.params;
-  const user = await User.findById(id).populate('videos');
+  const user = await User.findById(id).populate('videos').populate({
+    path: "videos",
+    populate: {
+      path: "owner",
+      model: "User",
+    },
+  });
   if (!user) {
     return res.status(404).render('404', { pageTitle: 'User Not Found' });
   }
