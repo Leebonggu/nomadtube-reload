@@ -79,6 +79,13 @@ const handleTimelineChange = (e) => {
   video.currentTime = value;
 };
 
+const handleEnded = () => {
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/views`, {
+    method: 'POST',
+  });
+}
+
 const handleFullScreen = () => {
   const fullScreen = document.fullscreenElement;
   if (fullScreen) {
@@ -125,5 +132,6 @@ timeline.addEventListener('input', handleTimelineChange);
 fullScreenBtn.addEventListener('click', handleFullScreen);
 video.addEventListener('loadeddata', handleLoadedMetaData);
 video.addEventListener('timeupdate', handleTimeUpdate);
+video.addEventListener('ended', handleEnded);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
