@@ -1,6 +1,7 @@
 import multer from "multer";
 import multerS3 from "multer-s3";
 import aws from 'aws-sdk';
+
 const s3 = new aws.S3({
   credentials: {
     accessKeyId: process.env.AWS_ID,
@@ -26,7 +27,8 @@ export const localMiddleware = (req, res, next) => {
   res.locals.loggedIn = Boolean(req.session.loggedIn);
   res.locals.siteName = "Wetube";
   res.locals.loggedInUser = req.session.user || {};
-  res.loclas.isHeroku = isHeroku;
+  console.log(isHeroku);
+  res.locals.isHeroku = isHeroku;
   next();
 };
 
