@@ -5,6 +5,15 @@
 - 1. React
 - 2. React + Redux (1. thunk, 2. saga)
 
+## Stack
+- Pug
+- SCSS
+- Express
+- MongoDB
+- Webpack
+- AWS S3
+- Heroku
+
 ## babel
 
 - 기본적으로는 컴파일러
